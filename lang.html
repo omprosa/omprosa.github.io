@@ -187,50 +187,51 @@
 <script>
 (function(){
     let urlParams = new URLSearchParams(window.location.search);
-    let id = urlParams.get('ar') || urlParams.get('ko') || urlParams.get('es') || urlParams.get('ja') || urlParams.get('pt') || urlParams.get('pl') || urlParams.get('th') || urlParams.get('fr');
+    let lang = urlParams.get('ar') || urlParams.get('ko') || urlParams.get('es') || urlParams.get('ja') || urlParams.get('pt') || urlParams.get('pl') || urlParams.get('th') || urlParams.get('fr');
     let mbot = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
 
-    if(id) {
+    if (lang) {
         let redirectUrl;
 
-        switch (id) {
+        switch (lang) {
             case 'ar':
-                redirectUrl = 'https://ara.tlast.co/item/omprosa.github.io/' + urlParams.get('ar');
+                redirectUrl = 'https://ara.tlast.co/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'es':
-                redirectUrl = 'https://ese.sionf.com/item/omprosa.github.io/' + urlParams.get('es');
+                redirectUrl = 'https://ese.sionf.com/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'ko':
-                redirectUrl = 'https://oko.hrosc.com/item/omprosa.github.io/' + urlParams.get('ko');
+                redirectUrl = 'https://oko.hrosc.com/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'ja':
-                redirectUrl = 'https://aja.tlast.co/item/omprosa.github.io/' + urlParams.get('ja');
+                redirectUrl = 'https://aja.tlast.co/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'pt':
-                redirectUrl = 'https://pte.tlast.co/item/omprosa.github.io/' + urlParams.get('pt');
+                redirectUrl = 'https://pte.tlast.co/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'pl':
-                redirectUrl = 'https://pln.sionf.com/item/omprosa.github.io/' + urlParams.get('pl');
+                redirectUrl = 'https://pln.sionf.com/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'th':
-                redirectUrl = 'https://the.psabl.com/item/omprosa.github.io/' + urlParams.get('th');
+                redirectUrl = 'https://the.psabl.com/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             case 'fr':
-                redirectUrl = 'https://fra.tomade.co/item/omprosa.github.io/' + urlParams.get('fr');
+                redirectUrl = 'https://fra.tomade.co/item/omprosa.github.io/' + urlParams.get(lang);
                 break;
             default:
-                // Default URL if id doesn't match any specific case
-                redirectUrl = 'https://ara.tlast.co/item/omprosa.github.io/' + id;
+                // Default URL if lang doesn't match any specific case
+                redirectUrl = 'https://ara.tlast.co/item/omprosa.github.io/' + lang;
                 break;
         }
 
-        if(mbot) {
+        if (mbot) {
             location.replace(redirectUrl);
         } else {
             location.href = redirectUrl;
         }
     }
 })();
+
 
 </script>
 	</body>
